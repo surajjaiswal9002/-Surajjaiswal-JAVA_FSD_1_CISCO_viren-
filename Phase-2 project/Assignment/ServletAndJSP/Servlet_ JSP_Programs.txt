@@ -1,0 +1,97 @@
+Servlet Programs:
+
+1) Get and Post:
+   getpost.html --> PostHandler.java  --> GetHandler.java
+
+2) Get Method Servlet(login):
+   login.html --> LoginServlet.java
+
+3) Generic Servlet:
+   generic-servlet.html  -->  GenericServ.java
+
+4) servletconfig.html --> onServletConfig.java
+
+5) servletcontext.html --> onServletContext.java
+
+6) servletmethods.html --> HeaderDetails.java
+
+7) ServletCollaboration :: 
+    (a) loginSetAttribute.html ---> SetAttributeExample.java----> GetAttributeExample.java
+    (b) welcomeRD.html --> RequestDispatch --> WelcomeRD.java 
+
+8) Hidden form fields
+hiddenform.html  --> HiddenFormServlet.java  -->  HiddenFormDashboard.java
+
+=================================================================================================================
+1) JSTL (action tags)
+ (a) employee.html --->process.jsp----->Employee.java
+
+ (b) productindex.jsp   ---> showbean.jsp   ---> forward.jsp    ---> forwarded.jsp
+   
+2) URL-rewriting
+urlrewrite.jsp---> FirstURL.java--->SecondURL.java
+
+3) RequestDispatcher
+welcomeRD.html---> RequestDispatch.java ---->WelcomeRD.java
+
+4) Cookie
+cookie.html --->FirstCookie.java--->SecondCookie.java
+
+5) Set/Get attribute
+loginSetAttribute.html (direct goes to java class)---> SetAttributeExample.java ----> GetAttributeExample.java
+
+6) Session
+session.html--->MyServlet1.java---->MyServlet2.java
+
+7) ServletContextListener in servlet
+MyServlet.java--->MyServletContextListener.java
+
+8) SessionListener
+MySessionListener.java---->HttpSessionListenerDemo.java
+
+9) Filter in Servlet
+filterindex.jsp---> PerformanceFilter.java---> ServletController1.java ----> ServletController2.java
+
+10) Chaining of Filters
+HelloServlet.java---> LoggerFilter.java ----> AuthFilter.java
+
+===============================================================================================================
+
+web server(tomcat) ---> Web container----> servlet(java class) ----> init(), service(), destroy()
+
+init- it is called for the time when servelt is created for first time and object is created of servlet.
+
+service- it is used when we want to handle the same request multiple times for differnt cleints so every time new servlet object is not created but it wis reusing the servlet object and calling the service method. here thread will be used to call the service method aain and again.
+
+destroy- when i dont want to use the servlet so i will destroy the servlet
+-------------------------------------------------------------------------------------------------------------
+
+
+WebContent ---> html/jsp (create)  ---> this will have the view files only 
+WebContent ---> WEB-INF ---> create xml file (web.xml name only)
+Java Resources ---> src --> create package name --> create your own java classes (these classes are known as servlets)
+
+
+
+Flow:
+1) View---> HTML file---> form action="onSCG"----> this is keyword for the web.xml
+
+2) web.xml ---> create servlet mapping with serlet class
+     <servlet>
+	     <servlet-name>onServletConfig</servlet-name>
+	     <servlet-class>advanced.java.program.OnServletConfig</servlet-class> 
+     </servlet>
+  
+     <servlet-mapping>
+	     <servlet-name>onServletConfig</servlet-name>
+	     <url-pattern>/onSCG</url-pattern>
+     </servlet-mapping>
+
+2) create java class (Servlet) ---> under src--->package name 
+   public class OnServletConfig extends HttpServlet 
+   {
+     // code
+    
+   } 
+
+service method can be of two types ---> goGet() and doPost()
