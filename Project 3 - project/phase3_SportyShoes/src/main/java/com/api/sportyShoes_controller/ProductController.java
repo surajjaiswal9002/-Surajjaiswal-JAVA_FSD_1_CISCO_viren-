@@ -45,7 +45,7 @@ public class ProductController
 		
 		// get particular product by their ID
 		@GetMapping("product/{id}")
-		public Optional<Product> getStudentId(@PathVariable int id)
+		public Optional<Product>  getProductId(@PathVariable int id)
 		{
 			return productrepository.findById(id);
 		}
