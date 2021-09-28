@@ -27,21 +27,21 @@ public class UserController
 	
 			// update existing product 
 			@PutMapping("userupdate/{id}")
-			public User updatProduct(@RequestBody User user)
+			public User updatUser(@RequestBody User user)
 			{
 				return userrepository.save(user);
 			}
 
 			// delete particular product from database
 			@DeleteMapping("userdelete/{id}")
-			public void deleteProduct(@PathVariable int u_id)
+			public void deleteUser(@PathVariable int u_id)
 			{
 				userrepository.deleteById(u_id);
 			}
 			
 			// retrieve all user from database
 			@GetMapping("userall")
-			public List<User> getAllStudent()
+			public List<User> getAllUser()
 			{
 				List<User> user=(List<User>) userrepository.findAll(); 
 				return user;
