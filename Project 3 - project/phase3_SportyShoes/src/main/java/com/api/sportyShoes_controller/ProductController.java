@@ -36,7 +36,7 @@ public class ProductController
 		
 		// retrieve all product from database
 		@GetMapping("all")
-		public List<Product> getAllStudent()
+		public List<Product> getAllProduct()
 		{
 			List<Product> product=(List<Product>) productrepository.findAll(); 
 			return product;
